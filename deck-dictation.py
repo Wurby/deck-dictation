@@ -5,7 +5,6 @@ import numpy as np
 from scipy.io.wavfile import write
 from pynput import keyboard
 import pyperclip
-import beepy
 
 class AudioTranscriber:
     def __init__(self):
@@ -37,13 +36,11 @@ class AudioTranscriber:
 
         with sd.InputStream(callback=self.callback, channels=1, samplerate=self.fs, blocksize=blocksize):
             print("Recording audio...")
-            beepy.beep(sound=1)
             while True:
                 if len(self.is_silent) == self.number_of_silent_segments and all(self.is_silent):
                     break
 
         print("Audio recording complete")
-        beepy.beep(sound=1)
         self.myrecording = np.concatenate(self.myrecording) 
         write(self.file_name, self.fs, self.myrecording) 
 
