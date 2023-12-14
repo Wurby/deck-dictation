@@ -1,12 +1,18 @@
 import os
 import shutil
 
+# Move the script to the correct location
+shutil.copy('./deck-dictation.py', '~.deck-dictation/deck-dictation.py')
+
+# Install the dependencies
+os.system('pip3 install -r requirements.txt')
+
 # Ask the user for their API key
 api_key = input("Please enter your Openai API key: ")
 
 # Define the paths
 service_file = '/etc/systemd/system/deck-dictation.service'
-script_file = '/path/to/deck-dictation.py'
+script_file = '~.deck-dictation/deck-dictation.py'
 
 # Create the service file
 service_content = f'''

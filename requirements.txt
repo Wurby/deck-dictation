@@ -1,0 +1,8 @@
+os
+openai
+sounddevice
+numpy
+scipy
+pynput
+pyperclip
+beepy
