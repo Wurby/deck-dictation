@@ -1,3 +1,4 @@
+import subprocess
 import os
 import shutil
 
@@ -11,7 +12,11 @@ os.makedirs(os.path.dirname(script_location), exist_ok=True)
 shutil.copy('./deck-dictation.py', script_location)
 
 # Install the dependencies
-os.system('pip3 install -r requirements.txt')
+try:
+    subprocess.check_call(['pip3', 'install', '-r', 'requirements.txt'])
+except subprocess.CalledProcessError:
+    print("Failed to install the required packages. Please check your pip installation and the contents of requirements.txt.")
+    exit(1)
 
 # Ask the user for their API key
 api_key = input("Please enter your Openai API key: ")

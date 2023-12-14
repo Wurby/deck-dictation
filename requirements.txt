@@ -7,3 +7,4 @@ pynput
 pyperclip
 beepy
 shutil
+subprocess
