@@ -5,11 +5,12 @@ import numpy as np
 from scipy.io.wavfile import write
 from pynput import keyboard
 import pyperclip
+from dotenv import load_dotenv
 
 class AudioTranscriber:
     def __init__(self):
-        os.getenv('DECK_DICTATION_OPENAI_API_KEY')
-        self.api_key = os.getenv('API_KEY')
+        load_dotenv('./deck-dictation.env')
+        self.api_key = os.environ["DECK_DICTATION_OPENAI_API_KEY"]
         self.client = OpenAI(api_key=self.api_key)
         self.audio_file_path = "speech.wav"
         self.fs = 44100  # Sample rate
