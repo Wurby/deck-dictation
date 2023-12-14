@@ -6,3 +6,4 @@ scipy
 pynput
 pyperclip
 beepy
+shutil
