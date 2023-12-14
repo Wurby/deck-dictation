@@ -2,7 +2,7 @@
 
 ## Description
 
-deck dictation is a system process that watches for global shortcut and then processes speech to text and saves it in the clipboard for consumption by the user.
+deck dictation is a system process that watches for a global shortcut ( ctrl+space+L ) to process speech to text and save it in the clipboard for consumption by the user.
 
 ## Installation
 
